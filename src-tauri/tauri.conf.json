@@ -1,0 +1,88 @@
+{
+    "build": {
+        "beforeBuildCommand": "",
+        "beforeDevCommand": "",
+        "devPath": "http://localhost:8080",
+        "distDir": "../crates/yew-ui/dist/"
+    },
+    "package": {
+        "productName": "GigaChat",
+        "version": "0.1.0"
+    },
+    "tauri": {
+        "allowlist": {
+            "all": false,
+            "fs": {
+                "scope": ["$APPCONFIG"],
+                "readFile": true,
+                "writeFile": true,
+                "readDir": true,
+                "createDir": true,
+                "exists": true
+            },
+            "path": {
+                "all": true
+            },
+            "window": {
+                "setResizable": false,
+                "startDragging": true
+            }
+        },
+        "bundle": {
+            "active": true,
+            "category": "DeveloperTool",
+            "copyright": "",
+            "deb": {
+                "depends": []
+            },
+            "externalBin": [],
+            "icon": [
+                "icons/32x32.png",
+                "icons/128x128.png",
+                "icons/128x128@2x.png",
+                "icons/icon.icns",
+                "icons/icon.ico"
+            ],
+            "identifier": "com.dimusic.gigachat",
+            "longDescription": "",
+            "macOS": {
+                "entitlements": null,
+                "exceptionDomain": "",
+                "frameworks": [],
+                "providerShortName": null,
+                "signingIdentity": null
+            },
+            "resources": [],
+            "shortDescription": "",
+            "targets": "all",
+            "windows": {
+                "certificateThumbprint": null,
+                "digestAlgorithm": "sha256",
+                "timestampUrl": ""
+            }
+        },
+        "security": {
+            "csp": null
+        },
+        "updater": {
+            "active": false
+        },
+        "windows": [
+            {
+                "fullscreen": false,
+                "height": 400,
+                "resizable": true,
+                "title": "GigaChat",
+                "width": 400,
+                "decorations": false,
+                "alwaysOnTop": false,
+                "transparent": true
+            }
+        ],
+        "systemTray": {
+            "iconPath": "icons/icon.png",
+            "iconAsTemplate": true
+        },
+        "macOSPrivateApi": true
+    }
+}

@@ -1,0 +1,40 @@
+[package]
+name = "gigachat-tauri"
+version = "1.0.0"
+description = "Twitch chat overlay"
+authors = ["Dmitry Malkov <dmitry.malkov@live.com>"]
+license = ""
+repository = ""
+default-run = "gigachat-tauri"
+edition = "2021"
+rust-version = "1.59"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[build-dependencies]
+tauri-build = { version = "1.2.1", features = [] }
+
+[dependencies]
+anyhow = "1.0.68"
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+tauri = { version = "1.2.2", features = ["fs-create-dir", "fs-exists", "fs-read-dir", "fs-read-file", "fs-write-file", "macos-private-api", "path-all", "system-tray", "window-start-dragging"] }
+gigachat-models = { path = "../crates/gigachat-models/" }
+twitch-irc = "5.0.0"
+reqwest = { version = "0.11.14", features = ["json"] }
+dotenvy = "0.15.6"
+tokio = { version = "1.23.0", features = ["full"] }
+async-trait = "0.1.64"
+log = "0.4"
+pretty_env_logger = "0.4"
+lazy_static = "1.4.0"
+futures = "0.3.26"
+tauri-plugin-window-state = { git = "https://github.com/tauri-apps/plugins-workspace", branch = "dev" }
+
+[features]
+# by default Tauri runs in production mode
+# when `tauri dev` runs it is executed with `cargo run --no-default-features` if `devPath` is an URL
+default = [ "custom-protocol" ]
+# this feature is used for production builds where `devPath` points to the filesystem
+# DO NOT remove this
+custom-protocol = [ "tauri/custom-protocol" ]

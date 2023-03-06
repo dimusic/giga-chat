@@ -1,0 +1,18 @@
+[package]
+name = "gigachat"
+description = "Twitch chat overlay"
+authors = ["Dmitry Malkov <dmitry.malkov@live.com>"]
+version = "1.0.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[workspace]
+members = [
+    "crates/gigachat-models",
+    "crates/yew-ui",
+    "src-tauri"
+]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]

@@ -1,0 +1,39 @@
+[package]
+name = "yew-ui"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+yew = { version = "0.20.0", features = ["csr"] }
+yew-hooks = "0.2.0"
+yew-router = "0.17.0"
+log = "0.4.17"
+wasm-logger = "0.2.0"
+wasm-bindgen = "0.2.83"
+wasm-bindgen-futures = "0.4.33"
+gloo-timers = "0.2.5"
+gloo-net = "0.2.5"
+gloo-console = "0.2.3"
+gigachat-models = { path = "../gigachat-models" }
+tauri-sys = { git = "https://github.com/JonasKruckenberg/tauri-sys", features = ["event", "tauri"] }
+futures = "0.3"
+serde = { version = "1", features = ["derive"] }
+serde-wasm-bindgen = "0.4"
+stylist = { version = "0.11", features = ["yew", "yew_use_style"] }
+chrono = { version = "0.4.23", features = ["serde"] }
+web-sys = { version = "0.3.60", features = ["Element", "HtmlInputElement", "HtmlSelectElement", "ScrollIntoViewOptions", "ScrollBehavior"] }
+bounce = "0.6.0"
+
+[profile.release]
+# less code to include into binary
+panic = 'abort'
+# optimization over all codebase ( better optimization, slower build )
+codegen-units = 1
+# optimization for size ( more aggressive )
+opt-level = 'z'
+# optimization for size
+# opt-level = 's'
+# link time optimization using using whole-program analysis
+lto = true
