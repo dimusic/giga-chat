@@ -170,7 +170,8 @@ impl EmotesService {
                     pre_str.push(' ');
                 }
 
-                html_str.push_str(&format!("{}{}", pre_str, word));
+                let escaped_word = html_escape::encode_text(word);
+                html_str.push_str(&format!("{}{}", pre_str, escaped_word));
 
                 last_tag = Some(MessageTag::PlainText);
             }
