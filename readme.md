@@ -6,7 +6,7 @@ Made with [Tauri](https://tauri.app/) and [Yew](https://yew.rs/)
 
 ### Demo
 
-<img src="https://user-images.githubusercontent.com/1485977/223316965-1df79e11-f748-4170-97f4-6ac3b98ec60c.gif" width="380">
+<img src="https://user-images.githubusercontent.com/1485977/223317603-af43168d-8686-4e38-a2fc-228b3cef0ce5.gif" width="380">
 
 https://user-images.githubusercontent.com/1485977/222994391-84012fd7-4e2f-4658-a203-e0b9ab587e72.mp4
 
